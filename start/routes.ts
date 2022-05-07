@@ -19,8 +19,7 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
-import User from 'App/Models/User'
 
 Route.get('/', async () => {
-  return { users: await User.all() }
+  return { users: [] }
 })
