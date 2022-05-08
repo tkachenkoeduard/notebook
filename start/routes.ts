@@ -20,6 +20,11 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/', async () => {
-  return { users: [] }
+Route.get('/', () => {
+  return 'api server'
 })
+
+Route.get('users', 'UsersController.index')
+Route.post('users/register', 'UsersController.register')
+Route.post('users/login', 'UsersController.login')
+Route.post('users/logout', 'UsersController.logout')
