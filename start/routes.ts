@@ -24,7 +24,7 @@ Route.get('/', () => {
   return 'api server'
 })
 
-Route.get('users', 'UsersController.index')
+Route.get('users', 'UsersController.index').middleware('auth:api')
 Route.post('users/register', 'UsersController.register')
 Route.post('users/login', 'UsersController.login')
 Route.post('users/logout', 'UsersController.logout')
