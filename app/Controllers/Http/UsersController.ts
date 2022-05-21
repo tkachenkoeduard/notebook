@@ -35,4 +35,9 @@ export default class UsersController {
     await ctx.auth.use('api').logout()
     ctx.response.send(null)
   }
+
+  public async me(ctx: HttpContextContract) {
+    const user = ctx.auth.user
+    ctx.response.send({ user })
+  }
 }

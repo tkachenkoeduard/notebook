@@ -25,6 +25,13 @@ Route.get('/', () => {
 })
 
 Route.get('users', 'UsersController.index').middleware('auth:api')
+Route.get('users/me', 'UsersController.me').middleware('auth:api')
 Route.post('users/register', 'UsersController.register')
 Route.post('users/login', 'UsersController.login')
-Route.post('users/logout', 'UsersController.logout')
+Route.post('users/logout', 'UsersController.logout').middleware('auth:api')
+
+Route.get('folders', 'FoldersController.index').middleware('auth:api')
+Route.get('folders/:id', 'FoldersController.show').middleware('auth:api')
+Route.post('folders', 'FoldersController.create').middleware('auth:api')
+Route.put('folders/:id', 'FoldersController.update').middleware('auth:api')
+Route.delete('folders/:id', 'FoldersController.delete').middleware('auth:api')
