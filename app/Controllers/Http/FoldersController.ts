@@ -1,5 +1,3 @@
-// import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Folder from 'App/Models/Folder'
 import CreateFolderValidator from 'App/Validators/CreateFolderValidator'
